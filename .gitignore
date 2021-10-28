@@ -1,0 +1,8 @@
+node_modules/
+*.env
+yarn-debug.log*
+yarn-error.log*
+
+# commit example.config.ts, but don't commit other config files
+*.config.ts
+!example.config.ts
