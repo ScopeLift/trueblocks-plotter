@@ -374,10 +374,22 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.2.tgz#423c77877d0569db20e1fc80885ac4118314010e"
   integrity sha512-eZxlbI8GZscaGS7kkc/trHTT5xgrjH3/1n2JDwusC9iahPKWMRvRjJSAN5mCXviuTGQ/lHnhvv8Q1YTpnfz9gA==
 
+"@types/d3@^3":
+  version "3.5.46"
+  resolved "https://registry.yarnpkg.com/@types/d3/-/d3-3.5.46.tgz#8b890138ea035b703ef4cdd2de0d86f8619c1c69"
+  integrity sha512-jNHfiGd41+JUV43LTMzQNidyp4Hn0XfhoSmy8baE0d/N5pGYpD+yX03JacY/MH+smFxYOQGXlz4HxkRZOuRNOQ==
+
 "@types/node@^16.11.6":
   version "16.11.6"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.6.tgz#6bef7a2a0ad684cf6e90fcfe31cecabd9ce0a3ae"
   integrity sha512-ua7PgUoeQFjmWPcoo9khiPum3Pd60k4/2ZGXt18sm2Slk0W0xZTqt5Y0Ny1NyBiN1EVQ/+FaF9NcY4Qe6rwk5w==
+
+"@types/plotly.js@^1.54.16":
+  version "1.54.16"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.54.16.tgz#7e76e2828ff06f46f8ff9ffd4eb56bf0c4703931"
+  integrity sha512-Kli9UqZwO12cvJ4dT2kGaBtpgq96y8TPsvsB87XTCO+jEMMVy0OZ4WMW+8plS/lBKCtMNtwRNYNlD3+8Stgn2Q==
+  dependencies:
+    "@types/d3" "^3"
 
 acorn-walk@^8.1.1:
   version "8.2.0"
@@ -520,24 +532,12 @@ minimalistic-crypto-utils@^1.0.1:
   resolved "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
   integrity sha1-9sAMHAsIIkblxNmd+4x8CDsrWCo=
 
-minimist@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
-  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
-
-mkdirp@~0.5.0:
-  version "0.5.5"
-  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.5.tgz#d91cefd62d1436ca0f41620e251288d420099def"
-  integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
+nodeplotlib@^0.7.6:
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/nodeplotlib/-/nodeplotlib-0.7.6.tgz#8925d917f1497d7fec09257181542d77be4fadc8"
+  integrity sha512-iqU2jAnGWNJ/esP7N/hloOKR2TiYRguv3Fn+kcBIrkd+xMICixCOh6y11cG0phFxDviG36Ti9czAqhzz5jMadw==
   dependencies:
-    minimist "^1.2.5"
-
-plotly@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/plotly/-/plotly-1.0.6.tgz#b2672c3df88333625bdf684982d0e3f6521d7aaa"
-  integrity sha1-smcsPfiDM2Jb32hJgtDj9lIdeqo=
-  dependencies:
-    mkdirp "~0.5.0"
+    "@types/plotly.js" "^1.54.16"
 
 prettier@^2.4.1:
   version "2.4.1"

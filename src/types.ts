@@ -1,22 +1,12 @@
-// --- Configuration parameters for an analysis ---
-// Plot layout settings
-export interface PlotLayout {
-  // Any plotly layout options are valid here
-  // TODO add some stricter type definitions to help self-document options, since Plotly's
-  // node docs seem to be lacking
-  [key: string]: any;
-}
+import { Layout, Plot } from 'nodeplotlib';
 
-// Plot settings for a give set of data
-interface PlotDataConfig {
-  name: string; // name used in plot legend
-}
+// --- Configuration parameters for an analysis ---
 
 // Shape for calling a view method on a contract
 interface CallConfigItem {
   target: string; // address to look at
   calldata: string; // ABI-encoded data to call on that address
-  plot: PlotDataConfig;
+  plot: Plot;
 }
 
 // Shape for fetching event logs
@@ -24,7 +14,7 @@ interface LogConfigItem {
   target: string; // address to look at
   topic: string; // 32 byte topic
   index: number; // in the emitted event, which index contains the data we care about
-  plot: PlotDataConfig;
+  plot: Plot;
 }
 
 // Each query specified in a config file must be this type
@@ -36,7 +26,7 @@ export type QueryConfig = {
   };
   // TODO query types currently only support plotting one return value per query
   queries: (CallConfigItem | LogConfigItem)[];
-  plotLayout: PlotLayout;
+  plotLayout: Layout;
 };
 
 // --- Output data ---

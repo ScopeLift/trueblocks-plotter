@@ -13,12 +13,31 @@ export const config: QueryConfig = {
   blocks: {
     start: 13250000,
     end: 13506114,
-    interval: 6646,
+    interval: 277, // 277 blocks per hour at 13 seconds per block
   },
-  // Each item in the array is converted to a chifra command to execute over the range of blocks specified above
+  // Each item in the array is converted to a chifra command to execute over the range of blocks specified above,
+  // and the `plot` object is passed directly to Plotly
   queries: [
-    { target: comp, calldata: iface.encodeFunctionData('balanceOf', [comptroller]), plot: { name: 'comptroller' } },
-    { target: comp, calldata: iface.encodeFunctionData('balanceOf', [timelock]), plot: { name: 'timelock' } },
+    {
+      target: comp,
+      calldata: iface.encodeFunctionData('balanceOf', [comptroller]),
+      // See plotly.js docs or the `PlotData` interface in node_modules/@types/plotly.js/index.d.ts for supported options
+      plot: {
+        name: 'comptroller',
+      },
+    },
+    {
+      target: comp,
+      calldata: iface.encodeFunctionData('balanceOf', [timelock]),
+      plot: {
+        name: 'timelock',
+      },
+    },
   ],
-  plotLayout: {},
+  // See plotly.js docs or the `Layout` interface in node_modules/@types/plotly.js/index.d.ts for supported options
+  plotLayout: {
+    title: 'COMP Balance Over Time',
+    xaxis: { title: 'Block number' },
+    yaxis: { title: 'COMP Balance' },
+  },
 };
