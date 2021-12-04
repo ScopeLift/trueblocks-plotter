@@ -12,7 +12,7 @@ const exec = util.promisify(execCallback);
 // --- Execution ---
 (async function () {
   // Generate chifra commands
-  const { blocks, plotLayout, queries } = config;
+  const { blocks, plotLayout, queries, maxBuffer } = config;
   const range = `${blocks.start}-${blocks.end}:${blocks.interval}`;
   const commands = queries.map((call) => {
     if ('calldata' in call) {
@@ -24,7 +24,7 @@ const exec = util.promisify(execCallback);
   });
 
   // Execute commands
-  const outputs = <Exec[]>await Promise.all(commands.map((cmd) => exec(cmd)));
+  const outputs = <Exec[]>await Promise.all(commands.map((cmd) => exec(cmd, { maxBuffer })));
   const data = <CallResponse[][]>outputs.map((output) => JSON.parse(output.stdout).data);
 
   // Format data for plotting

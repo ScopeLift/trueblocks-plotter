@@ -34,6 +34,9 @@ const timelock = '0x6d903f6003cca6255D85CcA4D3B5E5146dC33925'; // Compound timel
 
 // This is the main configuration object
 export const config: QueryConfig = {
+  // Optionally define the node.js max buffer size. Increase this from the default if your chifra
+  // command returns a lot of data, see: https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback
+  maxBuffer: 1024 * 1024,
   // Define the start block, end block, and interval to query. For example,
   // entering 12000000, 13000000, and 1000 will fetch data for every 1000
   // blocks between blocks 12000000 and 13000000

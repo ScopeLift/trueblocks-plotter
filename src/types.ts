@@ -19,6 +19,7 @@ interface LogConfigItem {
 
 // Each query specified in a config file must be this type
 export type QueryConfig = {
+  maxBuffer?: number;
   blocks: {
     start: number; // start block
     end: number; // end block
