@@ -12,8 +12,8 @@ export const config: QueryConfig = {
   // Blocks to query
   blocks: {
     start: 13250000,
-    end: 13506114,
-    interval: 277, // 277 blocks per hour at 13 seconds per block
+    end: 19000000,
+    interval: "weekly",
   },
   // Each item in the array is converted to a chifra command to execute over the range of blocks specified above,
   // and the `plot` object is passed directly to Plotly

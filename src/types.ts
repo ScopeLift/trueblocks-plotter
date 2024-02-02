@@ -21,9 +21,9 @@ interface LogConfigItem {
 export type QueryConfig = {
   maxBuffer?: number;
   blocks: {
-    start: number; // start block
-    end: number; // end block
-    interval: number; // interval between blocks
+    start: number | string; // start block
+    end: number | string; // end block
+    interval: number | string; // interval between blocks
   };
   // TODO query types currently only support plotting one return value per query
   queries: (CallConfigItem | LogConfigItem)[];

@@ -5,11 +5,11 @@ _This is a work in progress_
 ## Usage
 
 1. Install [TrueBlocks](https://github.com/TrueBlocks/trueblocks-core/) if you don't already have it
-2. Install packages with `yarn`
-3. Run `ANALYSIS_NAME=analysisName yarn start`
+2. Install packages with `yarn install`
+3. Run `ANALYSIS_NAME=example yarn start`
 4. The plot will open in a browser window
 
-You can run `ANALYSIS_NAME=example yarn start` to see an example
+Run `ANALYSIS_NAME=<your_name> yarn start` after creating **your_name**.config.ts file in the config folder.
 
 ## Example
 
@@ -42,8 +42,8 @@ export const config: QueryConfig = {
   // blocks between blocks 12000000 and 13000000
   blocks: {
     start: 13250000,
-    end: 13506114,
-    interval: 277, // 277 blocks per hour at 13 seconds per block
+    end: 19000000,
+    interval: "weekly", // "daily", "weekly", "monthly", "quarterly", "yearly", or a number of blocks
   },
   // Each item in this `queries` array is converted to a chifra command to execute
   // at each block in the range of blocks specified above. The `plot` object is
@@ -93,5 +93,5 @@ ANALYSIS_NAME=example yarn start
 
 This will open an interactive plot in your browser window, as shown below
 
-[![Example](assets/example.gif)](assets/example.gif)
+[![Example](assets/example.png)](assets/example.png)
 

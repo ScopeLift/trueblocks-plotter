@@ -16,7 +16,7 @@ const exec = util.promisify(execCallback);
   const range = `${blocks.start}-${blocks.end}:${blocks.interval}`;
   const commands = queries.map((call) => {
     if ('calldata' in call) {
-      return `chifra state --call "${call.target}!${call.calldata}" ${range} --fmt json`;
+      return `chifra state ${call.target} --call "${call.calldata}" ${range} --fmt json`;
     } else {
       // return `chifra blocks --logs --emitter ${call.target} --topic ${call.topic} ${range} --fmt json`;
       throw new Error('Log queries not yet supported');
